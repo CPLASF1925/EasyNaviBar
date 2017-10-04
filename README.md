@@ -1,5 +1,5 @@
 # EasyNaviBar
-[![Travis](https://img.shields.io/travis/rust-lang/rust.svg)](https://github.com/Ccapton/EasyNaviBar) [![Hex.pm](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/Ccapton/EasyNaviBar) ![](https://img.shields.io/badge/api-16-ff69b4.svg)
+[![Travis](https://img.shields.io/travis/rust-lang/rust.svg)](https://github.com/Ccapton/EasyNaviBar) [![Hex.pm](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/Ccapton/EasyNaviBar) ![](https://img.shields.io/badge/Api-16-ff69b4.svg)
 
 This is a useful and efficient indicator view for switching fragments in an activity.It's very easy for you to use in your android application!
 
