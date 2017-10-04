@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/bg_grey_light"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.capton.enbdemo.MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:elevation="5dp"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+    </android.support.v7.widget.Toolbar>
+
+    <com.capton.enb.EasyNaviBar
+        android:id="@+id/navibar"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="16dp"
+        android:background="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"   />
+    <ScrollView
+        android:background="@color/white"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_below="@+id/navibar"
+        android:layout_above="@+id/copy"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+   <LinearLayout
+       android:orientation="vertical"
+       android:layout_marginTop="16dp"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+       <LinearLayout
+           android:orientation="horizontal"
+           android:paddingLeft="10dp"
+           android:layout_marginBottom="20dp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           <TextView
+               android:id="@+id/ViewWidth"
+               android:text="ViewWidth : "
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content" />
+           <SeekBar
+               android:id="@+id/width"
+               android:max="500"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content" />
+       </LinearLayout>
+       <LinearLayout
+           android:orientation="horizontal"
+           android:paddingLeft="10dp"
+           android:layout_marginBottom="20dp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           <TextView
+               android:id="@+id/ViewHeight"
+               android:text="ViewHeight : "
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content" />
+           <SeekBar
+               android:id="@+id/height"
+               android:max="80"
+               android:progress="50"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content" />
+       </LinearLayout>
+       <LinearLayout
+           android:orientation="horizontal"
+           android:paddingLeft="10dp"
+           android:layout_marginBottom="20dp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           <TextView
+               android:id="@+id/IconSize"
+               android:text="IconSize : "
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content" />
+           <SeekBar
+               android:id="@+id/iconSize"
+               android:max="40"
+               android:progress="10"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content" />
+       </LinearLayout>
+       <LinearLayout
+           android:orientation="horizontal"
+           android:paddingLeft="10dp"
+           android:layout_marginBottom="20dp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           <TextView
+               android:id="@+id/TextSize"
+               android:text="TextSize : "
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content" />
+           <SeekBar
+               android:id="@+id/textSize"
+               android:max="40"
+               android:progress="10"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content" />
+       </LinearLayout>
+       <LinearLayout
+           android:orientation="horizontal"
+           android:paddingLeft="10dp"
+           android:layout_marginBottom="20dp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           <TextView
+               android:id="@+id/IconMarginTop"
+               android:text="IconMarginTop : "
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content" />
+           <SeekBar
+               android:id="@+id/iconMargintTop"
+               android:max="10"
+               android:progress="2"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content" />
+       </LinearLayout>
+       <LinearLayout
+           android:orientation="horizontal"
+           android:paddingLeft="10dp"
+           android:layout_marginBottom="20dp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           <TextView
+               android:id="@+id/IconMarginBottom"
+               android:text="IconMarginBottom : "
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content" />
+           <SeekBar
+               android:id="@+id/iconMarginBottom"
+               android:max="10"
+               android:progress="0"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content" />
+       </LinearLayout>
+       <LinearLayout
+           android:orientation="horizontal"
+           android:paddingLeft="10dp"
+           android:layout_marginBottom="20dp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           <TextView
+               android:id="@+id/TextMarginTop"
+               android:text="TextMarginTop : "
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content" />
+           <SeekBar
+               android:id="@+id/textMarginTop"
+               android:max="10"
+               android:progress="0"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content" />
+       </LinearLayout>
+       <LinearLayout
+           android:orientation="horizontal"
+           android:paddingLeft="10dp"
+           android:layout_marginBottom="20dp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           <TextView
+               android:id="@+id/TextMarginBottom"
+               android:text="TextMarginBottom : "
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content" />
+           <SeekBar
+               android:id="@+id/textMarginBottom"
+               android:max="10"
+               android:progress="2"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content" />
+       </LinearLayout>
+
+       <LinearLayout
+           android:orientation="horizontal"
+           android:paddingLeft="10dp"
+           android:gravity="center_vertical"
+           android:layout_marginBottom="20dp"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+           <TextView
+               android:id="@+id/TextColor"
+               android:text="TextColor : "
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content" />
+           <View
+               android:id="@+id/textColor"
+               android:layout_marginLeft="10dp"
+               android:background="@color/black"
+               android:layout_width="30dp"
+               android:layout_height="30dp" />
+           <View
+               android:layout_weight="1"
+               android:layout_width="0dp"
+               android:layout_height="match_parent"/>
+           <TextView
+               android:id="@+id/TextCheckColor"
+               android:text="TextCheckColor : "
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content" />
+           <View
+               android:id="@+id/textCheckColor"
+               android:layout_marginLeft="10dp"
+               android:layout_marginRight="60dp"
+               android:background="@color/red"
+               android:layout_width="30dp"
+               android:layout_height="30dp" />
+       </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/ShowDivider"
+                android:text="ShowDivider : "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+       <Switch
+           android:layout_marginLeft="10dp"
+           android:id="@+id/showDivider"
+           android:checked="true"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content" />
+            <View
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"/>
+            <TextView
+                android:id="@+id/DividerColor"
+                android:text="DividerColor : "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <View
+                android:id="@+id/dividerColor"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="60dp"
+                android:background="@color/bg_grey"
+                android:layout_width="30dp"
+                android:layout_height="30dp" />
+            </LinearLayout>
+
+   </LinearLayout>
+    </ScrollView>
+     <Button
+         android:id="@+id/copy"
+         android:text="复制视图参数"
+         android:textSize="10sp"
+         android:textColor="@color/white"
+         android:layout_centerHorizontal="true"
+         android:layout_alignParentBottom="true"
+         android:background="@drawable/shape_radius"
+         android:layout_width="100dp"
+         android:layout_height="40dp"
+         android:layout_marginBottom="16dp"
+         />
+</RelativeLayout>
