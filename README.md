@@ -5,13 +5,13 @@ This is a useful and efficient indicator view for switching fragments in an acti
 
 ![](https://raw.githubusercontent.com/Ccapton/EasyNaviBar/master/ENBlogo.jpg)
 
-### Display
+## Display
 
 **You guys can set the EasyNaviBar like this below:**
  
 <img src="https://raw.githubusercontent.com/Ccapton/EasyNaviBar/master/enb.gif" width = "300" height = "533"  align=center /> <img src="https://raw.githubusercontent.com/Ccapton/EasyNaviBar/master/enb_display.png" width = "300" height = "533"  align=center /> 
 
-### How to Get it
+## How to Get it
 **build.gradle(Project)**
 ```
 allprojects {
@@ -27,7 +27,7 @@ dependencies {
          compile 'com.github.Ccapton:EasyNaviBar:1.0.3'
    }
 ```
-### Demo code 
+## Demo code 
 in your layout.xml
 ```
  <com.capton.enb.EasyNaviBar 
@@ -57,7 +57,7 @@ in activity
             }
         });
 ```
-### Mainly Methods
+## Mainly Methods
 method | useage
 ------------ | -------------
 setTabData(String []textStrs,int []iconReses,int []checkIconReses) | you must set these arrays (text,icons' resId and checked icons' resId)
@@ -87,4 +87,27 @@ setDividerColor(int color) | ~
 ... | ~
 lots of get Methods | ~
 ... | ~
+
+## Thanks 
+**liyanxi/BadgeView** https://github.com/liyanxi/BadgeView
+
+**QuadFlask/colorpicker** https://github.com/QuadFlask/colorpicker
+
+## License
+```
+Copyright 2016-2017 Ccapton
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
+
 
