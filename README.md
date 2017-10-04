@@ -1,2 +1,2 @@
 # EasyNaviBar
- [![Build Status](https://travis-ci.org/zhihu/Matisse.svg)](https://travis-ci.org/zhihu/Matisse)  ![](https://img.shields.io/badge/sdk-16-blue.svg)
+[![Travis](https://img.shields.io/travis/rust-lang/rust.svg)](https://github.com/Ccapton/EasyNaviBar) ![](https://img.shields.io/badge/sdk-16-blue.svg)
