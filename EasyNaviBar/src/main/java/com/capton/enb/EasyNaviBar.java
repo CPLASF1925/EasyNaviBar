@@ -27,7 +27,8 @@ import java.util.TreeMap;
  */
 
 public class EasyNaviBar extends RelativeLayout {
- public interface OnTabClickListener {
+ 
+    public interface OnTabClickListener {
         void onTabClick(int position);
     }
 
@@ -93,14 +94,10 @@ public class EasyNaviBar extends RelativeLayout {
         dividerView.setLayoutParams(new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,2));
         dividerView.setBackgroundColor(dividerColor);
 
-        initData();
-        initTabView();
+       // initData();
+       // initTabView();
 
         addView(scrollview);
-        for (View view:
-                tabViews) {
-            ((LinearLayout)scrollview.getChildAt(0)).addView(view);
-        }
         addView(dividerView);
     }
 
@@ -238,11 +235,8 @@ public class EasyNaviBar extends RelativeLayout {
                 imageView.setImageResource(tabDataList.get(i).checkIconRes);
             }
         }
-        if(tabDataList.size()<tabViews.size()){
-            for (int i = tabDataList.size(); i < tabViews.size(); i++) {
-                tabViews.remove(i);
-            }
-        }
+
+
     }
 
     private void resetTabView(){
@@ -262,18 +256,20 @@ public class EasyNaviBar extends RelativeLayout {
         int heightMode=MeasureSpec.getMode(heightMeasureSpec);
         int heightSize=MeasureSpec.getSize(heightMeasureSpec);
 
+        if(tabViews.size() !=0) {
+            if (textMarginTop != 0 || textMarginBottom != 0) {
+                LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) (findViewById(R.id.text)).getLayoutParams();
+                lp.topMargin = DisplayUtil.dip2px(getContext(), textMarginTop);
+                lp.bottomMargin = DisplayUtil.dip2px(getContext(), textMarginBottom);
+            }
 
-        if(textMarginTop!=0||textMarginBottom!=0){
-            LinearLayout.LayoutParams lp= (LinearLayout.LayoutParams) findViewById(R.id.text).getLayoutParams();
-            lp.topMargin=DisplayUtil.dip2px(getContext(),textMarginTop);
-            lp.bottomMargin=DisplayUtil.dip2px(getContext(),textMarginBottom);
-        }
+            if (iconMarginTop != 0 || iconMarginBottom != 0) {
+                LinearLayout.LayoutParams lp = (LinearLayout.LayoutParams) (findViewById(R.id.icon)).getLayoutParams();
+                lp.topMargin = DisplayUtil.dip2px(getContext(), iconMarginTop);
+                lp.bottomMargin = DisplayUtil.dip2px(getContext(), iconMarginBottom);
+                ;
+            }
 
-        if(iconMarginTop!=0||iconMarginBottom!=0){
-            LinearLayout.LayoutParams lp= (LinearLayout.LayoutParams) findViewById(R.id.icon).getLayoutParams();
-            lp.topMargin=DisplayUtil.dip2px(getContext(),iconMarginTop);
-            lp.bottomMargin=DisplayUtil.dip2px(getContext(),iconMarginBottom);;
-        }
 
         iconheightPx=DisplayUtil.dip2px(getContext(),iconHeight);
         textHeightPx=TextSizeUtil.getTextHeight(DisplayUtil.sp2px(getContext(),textSize));
@@ -312,6 +308,7 @@ public class EasyNaviBar extends RelativeLayout {
             ViewGroup.LayoutParams lp= ( ViewGroup.LayoutParams)tabViews.get(i).getLayoutParams();
             lp.width=mWidth/tabViews.size();
         }
+        }
 
         setMeasuredDimension(mWidth,mHeight);
     }
@@ -348,6 +345,8 @@ public class EasyNaviBar extends RelativeLayout {
         super.onLayout(changed, l, t, r, b);
             getChildAt(0).layout(0, 0,mWidth, mHeight);
             getChildAt(1).layout(0,0,mWidth,2);
+
+            if(tabViews.size()!=0)
             setChildViewsParams();
     }
 
@@ -373,6 +372,11 @@ public class EasyNaviBar extends RelativeLayout {
        }else {
            for (int i = 0; i < textStrs.length; i++) {
                tabDataList.add(new TabData(iconReses[i],checkIconReses[i],textStrs[i]));
+           }
+           initTabView();
+           for (View view:
+                   tabViews) {
+               ((LinearLayout)scrollview.getChildAt(0)).addView(view);
            }
        }
        return this;
@@ -644,16 +648,15 @@ public class EasyNaviBar extends RelativeLayout {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                   BadgeTextView mBadgeView= new BadgeTextView(getContext());
-                    mBadgeView.setTargetView(tabViews.get(position));
-                    mBadgeView.setBadgeCount(0)
-                            .setmDefaultTopPadding(DisplayUtil.dip2px(getContext(),iconMarginTop));
-                    int marginRight = (tabViews.get(position).getWidth() - imageViews.get(position).getWidth()
-                            - (int) mBadgeView.getTextSize()) / 2;
-                    mBadgeView.setmDefaultRightPadding(marginRight);
-                    badgeTextMap.put(position,mBadgeView);
-            }
-        },100);
+                BadgeTextView mBadgeView = new BadgeTextView(getContext());
+                mBadgeView.setTargetView(tabViews.get(position));
+                mBadgeView.setBadgeCount(0)
+                        .setmDefaultTopPadding(DisplayUtil.dip2px(getContext(), iconMarginTop));
+                int marginRight = (tabViews.get(position).getWidth() - imageViews.get(position).getWidth()
+                        - (int) mBadgeView.getTextSize()) / 2;
+                mBadgeView.setmDefaultRightPadding(marginRight);
+                badgeTextMap.put(position, mBadgeView);
+            }},500);
         return this;
     }
     public EasyNaviBar setBadgeNumber(int position,int number,int paddingRight,int paddingTop){
@@ -691,6 +694,5 @@ public class EasyNaviBar extends RelativeLayout {
         badgeTextMap.get(position).setBadgeShown(isShowBadge);
         return this;
     }
-
 
 }
