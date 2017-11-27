@@ -27,8 +27,7 @@ import java.util.TreeMap;
  */
 
 public class EasyNaviBar extends RelativeLayout {
-
-    public interface OnTabClickListener {
+ public interface OnTabClickListener {
         void onTabClick(int position);
     }
 
@@ -227,7 +226,7 @@ public class EasyNaviBar extends RelativeLayout {
     }
 
     private void setChildViewsParams(){
-        for (int i = 0; i <tabViews.size(); i++) {
+        for (int i = 0; i <tabDataList.size(); i++) {
              ImageView imageView = imageViews.get(i);
              TextView textView = textViews.get(i);
             doSomeViewsParamsSettings(i,imageView,textView);
@@ -239,10 +238,15 @@ public class EasyNaviBar extends RelativeLayout {
                 imageView.setImageResource(tabDataList.get(i).checkIconRes);
             }
         }
+        if(tabDataList.size()<tabViews.size()){
+            for (int i = tabDataList.size(); i < tabViews.size(); i++) {
+                tabViews.remove(i);
+            }
+        }
     }
 
     private void resetTabView(){
-        for (int i = 0; i < imageViews.size(); i++) {
+        for (int i = 0; i < tabDataList.size(); i++) {
             imageViews.get(i).setImageResource(tabDataList.get(i).iconRes);
             textViews.get(i).setTextColor(textColor);
         }
@@ -349,6 +353,7 @@ public class EasyNaviBar extends RelativeLayout {
 
     public EasyNaviBar setTabData(String []textStrs,int []iconReses,int []checkIconReses){
         tabDataList.clear();
+
        if(textStrs.length!=iconReses.length||
                checkIconReses.length!=iconReses.length||
                textStrs.length!=checkIconReses.length){
@@ -686,5 +691,6 @@ public class EasyNaviBar extends RelativeLayout {
         badgeTextMap.get(position).setBadgeShown(isShowBadge);
         return this;
     }
+
 
 }
